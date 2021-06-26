@@ -1,7 +1,7 @@
 # Bankist-App
 A simple Bank app made with JavaScript, HTML and CSS.
 
-Functionality applied:
+Functionality:
 
 >> User can login into their account with correct credentials.
 >> User can transfer money from his/her account to another account if it exist. User can't transfer money to himself/herself.
