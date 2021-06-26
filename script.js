@@ -6,9 +6,9 @@
 
 const account1 = {
   owner: "Gurveen Singh",
-  movements: [10000, 200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
-  interestRate: 1.8, // %
-  pin: 2222,
+  movements: [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
+  interestRate: 1.2, // %
+  pin: 9999,
 
   movementsDates: [
     "2019-11-18T21:31:17.178Z",
@@ -21,7 +21,7 @@ const account1 = {
     "2020-07-12T10:51:36.790Z",
   ],
   currency: "USD",
-  locale: "en-IN", // de-DE
+  locale: "en-IN",
 };
 
 const account2 = {
@@ -40,7 +40,7 @@ const account2 = {
     "2020-06-25T18:49:59.371Z",
     "2020-07-26T12:01:20.894Z",
   ],
-  currency: "EUR",
+  currency: "USD",
   locale: "en-US",
 };
 
@@ -223,6 +223,7 @@ const createUserName = function (accs) {
 createUserName(accounts);
 
 const updateUI = function (acc) {
+  errorMessage.textContent = "";
   // Display movements
   displayMovements(acc);
 
@@ -253,7 +254,7 @@ const startLogOutTimer = function () {
   };
 
   // Set time to 5 minutes
-  let time = 120;
+  let time = 300;
 
   // Call the timer every second
   tick();
@@ -306,8 +307,8 @@ btnLogin.addEventListener("click", function (e) {
     errorMessage.textContent = `Please! Enter User `;
   } else if (inputLoginPin.value === "") {
     errorMessage.textContent = `Please! Enter Pin `;
-  } else {
-    errorMessage.textContent = `User Not Found! `;
+  } else if (inputLoginUsername.value != inputLoginPin.value) {
+    errorMessage.textContent = `User Not Found!`;
   }
 });
 
